@@ -1,0 +1,11 @@
+parameters:
+  paths:
+    - ../../kjblocksexampleextension.php
+  ignoreErrors:
+    # - "#Insert your error here (don't forget to escape special characters like the following hash: \\#)#"
+  reportUnmatchedIgnoredErrors: true
+  level: 9
+
+includes:
+  - %currentWorkingDirectory%/tests/php/.phpstan_bootstrap.neon
+  - %currentWorkingDirectory%/vendor/prestashop/php-dev-tools/phpstan/ps-module-extension.neon

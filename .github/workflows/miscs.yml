@@ -1,0 +1,17 @@
+name: Miscellaneous tests
+on: [push, pull_request]
+
+jobs:
+  header-stamp:
+    name: Check license headers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup composer
+        uses: ./.github/actions/setup-composer
+
+      - name: Run header-stamp
+        run: php vendor/bin/header-stamp --dry-run
+          --extensions="php,js,css,scss,tpl,html.twig,vue" --exclude="vendor" --license="_dev/header-stamp/afl.txt"

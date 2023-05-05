@@ -1,0 +1,35 @@
+name: Build release
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build JS dependencies
+        uses: PrestaShopCorp/github-action-build-js/12@v1.0
+        with:
+          cmd: npm
+          path: ./_dev
+
+      - name: Install dependencies
+        run: composer install --no-dev
+
+      - name: Clean-up project
+        uses: PrestaShopCorp/github-action-clean-before-deploy@v1.0
+
+      - name: Prepare auto-index tool
+        run: composer global require prestashop/autoindex
+
+      - name: Generate index.php
+        run: ~/.composer/vendor/bin/autoindex
+
+      - name: Create and upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ github.event.repository.name }}
+          path: ../
+

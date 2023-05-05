@@ -1,0 +1,17 @@
+name: JS tests
+on: [push, pull_request]
+
+jobs:
+  js-lint:
+    name: JS Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: ./.github/actions/setup-node
+
+      - name: Run ESLint
+        run: npm run lint
+        working-directory: ./_dev
