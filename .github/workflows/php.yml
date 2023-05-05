@@ -77,5 +77,23 @@ jobs:
           unzip -q ${{ runner.temp }}/prestashop.zip -d ${{ runner.temp }}/prestashop_zip
           unzip -q ${{ runner.temp }}/prestashop_zip/prestashop.zip -d ${{ runner.temp }}/prestashop
 
+      - name: Extract kjblocks
+        if: steps.cache_prestashop_source.outputs.cache-hit != 'true'
+        run: |
+          echo "no cache for kjblocks source. Fetching and extracting source code..."
+          wget https://api.github.com/repos/Kaudaj/kjblocks/releases/assets/105451528 \
+            --header="Authorization: token ${{ secrets.GH_TOKEN }}" --header="Accept: application/octet-stream" \
+            --quiet --output-document ${{ runner.temp }}/kjblocks.zip
+          unzip -q ${{ runner.temp }}/kjblocks.zip -d ${{ runner.temp }}/kjblocks_zip
+          mv ${{ runner.temp }}/kjblocks_zip/kjblocks ${{ runner.temp }}/prestashop/modules
+
+      - name: Move repository to PrestaShop environment
+        run: |
+          rm -rf ${{ runner.temp }}/prestashop/modules/${{ github.event.repository.name }}
+          cd ..
+          mv ${{ github.event.repository.name }} ${{ runner.temp }}/prestashop/modules/${{ github.event.repository.name }}
+          ln -s ${{ runner.temp }}/prestashop/modules/${{ github.event.repository.name }}
+          cd ${{ github.event.repository.name }}
+
       - name: Run PHPStan
         run: _PS_ROOT_DIR_=${{ runner.temp }}/prestashop/ php ./vendor/bin/phpstan analyse --configuration=tests/php/phpstan.dist.neon

@@ -1,3 +1,4 @@
 parameters:
   bootstrapFiles:
     - %currentWorkingDirectory%/tests/php/.phpstan_bootstrap.php
+    - %currentWorkingDirectory%/../kjblocks/vendor/autoload.php

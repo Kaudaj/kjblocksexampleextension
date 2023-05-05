@@ -23,8 +23,19 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
     require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
 
+if (file_exists(_PS_MODULE_DIR_ . 'kjblocks/vendor/autoload.php')) {
+    require_once _PS_MODULE_DIR_ . 'kjblocks/vendor/autoload.php';
+}
+
 class KJBlocksExampleExtension extends Module
 {
+    /**
+     * @var string[] Hooks to register
+     */
+    public const HOOKS = [
+        'actionGetBlockTypes',
+    ];
+
     public function __construct()
     {
         $this->name = 'kjblocksexampleextension';
@@ -39,7 +50,7 @@ class KJBlocksExampleExtension extends Module
 
         $this->displayName = $this->trans('Blocks Example Extension', [], 'Modules.Kjblocksexampleextension.Admin');
         $this->description = $this->trans(<<<EOF
-        Boost module development by providing a solid bedrock.
+        Provides example for kjblocks extensions.
 EOF
             ,
             [],
@@ -53,5 +64,25 @@ EOF
     public function isUsingNewTranslationSystem(): bool
     {
         return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function install(): bool
+    {
+        return parent::install()
+            && $this->registerHook(self::HOOKS)
+        ;
+    }
+
+    /**
+     * @return string[]
+     */
+    public function hookActionGetBlockTypes(): array
+    {
+        return [
+            'kaudaj.module.blocks_example_extension.block.example',
+        ];
     }
 }

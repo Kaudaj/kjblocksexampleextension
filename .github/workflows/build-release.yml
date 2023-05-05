@@ -9,12 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Build JS dependencies
-        uses: PrestaShopCorp/github-action-build-js/12@v1.0
-        with:
-          cmd: npm
-          path: ./_dev
-
       - name: Install dependencies
         run: composer install --no-dev
 

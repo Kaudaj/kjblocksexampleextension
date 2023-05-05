@@ -1,0 +1,7 @@
+imports:
+  - { resource: ../services/common/**/*.yml }
+  - { resource: ../services/admin/**/*.yml }
+
+services:
+  _defaults:
+    public: true

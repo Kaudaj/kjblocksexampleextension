@@ -1,4 +1,4 @@
-/**
+{**
  * Copyright since 2019 Kaudaj
  *
  * NOTICE OF LICENSE
@@ -14,4 +14,7 @@
  * @author    Kaudaj <info@kaudaj.com>
  * @copyright Since 2019 Kaudaj
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
- */
+ *}
+
+<h2>My awesome block</h2>
+<p>Which comes with his own option : {$my_option}</p>

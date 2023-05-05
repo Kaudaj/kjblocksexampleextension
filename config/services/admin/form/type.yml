@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    public: true
+
+  kaudaj.module.blocks_example_extension.form.type.block.example:
+    public: true
+    parent: "form.type.translatable.aware"
+    class: Kaudaj\Module\BlocksExampleExtension\Form\Type\Block\ExampleBlockType
+    tags:
+      - { name: form.type }

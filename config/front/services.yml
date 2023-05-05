@@ -1,5 +1,5 @@
 imports:
-  - { resource: services/common/**/*.yml }
+  - { resource: ../services/common/**/*.yml }
 
 services:
   _defaults:
