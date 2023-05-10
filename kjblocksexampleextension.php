@@ -43,6 +43,7 @@ class KJBlocksExampleExtension extends Module
         $this->version = '1.0.0';
         $this->author = 'Kaudaj';
         $this->ps_versions_compliancy = ['min' => '1.7.8.0', 'max' => _PS_VERSION_];
+        $this->dependencies = ['kjblocks'];
 
         $this->bootstrap = true;
 
