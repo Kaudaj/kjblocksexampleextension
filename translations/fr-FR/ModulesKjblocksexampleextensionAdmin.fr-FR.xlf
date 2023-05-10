@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="admin" source-language="fr-FR" target-language="fr-FR" datatype="plaintext">
+  <file original="admin-dev" source-language="fr-FR" target-language="fr-FR" datatype="plaintext">
     <body>
-      <trans-unit id="1fdc43b01be4e6a90e605babfda25b0c">
-        <source>Blocks Example Extension</source>
-        <target>Blocks Example Extension</target>
+      <trans-unit id="44aad3546442116912a627b930be5fe0">
+        <source>My option</source>
+        <target>Mon option</target>
         <note>Line: </note>
       </trans-unit>
-      <trans-unit id="8b688592443e7ec75f2d835e6740473c">
-        <source>        Boost module development by providing a solid bedrock.</source>
-        <target>Booste le développement de module en fournissant une base solide.</target>
+      <trans-unit id="eb4330c5f1fd14cb14ab6e1bde2c4749">
+        <source>Help user to fill this field.</source>
+        <target>Aidez l'utilisateur à remplir ce champ.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="d62bf5c71bd9011f55bfe7817d0bda09">
+        <source>Example block, to start from or to study how it works</source>
+        <target>Exemple de bloc, pour commencer ou pour étudier le fonctionnement</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="0a52730597fb4ffa01fc117d9e71e3a9">
+        <source>Example</source>
+        <target>Exemple</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9c06691f18a5a13fb40706230dd32a83">
+        <source>Blocks Example Extension</source>
+        <target>Extension Exemple de Blocs</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ed50f2f4e5e27256e1f8834b15286d5c">
+        <source>        Provides example for kjblocks extensions.</source>
+        <target>Fournit un exemple pour les extensions de kjblocks.</target>
         <note>Line: </note>
       </trans-unit>
     </body>

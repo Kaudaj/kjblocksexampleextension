@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="admin" source-language="en-US" target-language="en-US" datatype="plaintext">
+  <file original="admin-dev" source-language="en-US" target-language="en-US" datatype="plaintext">
     <body>
-      <trans-unit id="1fdc43b01be4e6a90e605babfda25b0c">
+      <trans-unit id="44aad3546442116912a627b930be5fe0">
+        <source>My option</source>
+        <target>My option</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="eb4330c5f1fd14cb14ab6e1bde2c4749">
+        <source>Help user to fill this field.</source>
+        <target>Help user to fill this field.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="d62bf5c71bd9011f55bfe7817d0bda09">
+        <source>Example block, to start from or to study how it works</source>
+        <target>Example block, to start from or to study how it works</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="0a52730597fb4ffa01fc117d9e71e3a9">
+        <source>Example</source>
+        <target>Example</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9c06691f18a5a13fb40706230dd32a83">
         <source>Blocks Example Extension</source>
         <target>Blocks Example Extension</target>
         <note>Line: </note>
       </trans-unit>
-      <trans-unit id="8b688592443e7ec75f2d835e6740473c">
-        <source>        Boost module development by providing a solid bedrock.</source>
-        <target>Boost module development by providing a solid bedrock.</target>
+      <trans-unit id="ed50f2f4e5e27256e1f8834b15286d5c">
+        <source>        Provides example for kjblocks extensions.</source>
+        <target>        Provides example for kjblocks extensions.</target>
         <note>Line: </note>
       </trans-unit>
     </body>
