@@ -2,9 +2,9 @@
 
 # *Blocks: Example extension* for PrestaShop
 
-[![PHP tests](https://github.com/Kaudaj/kjblocks/actions/workflows/php.yml/badge.svg)](https://github.com/Kaudaj/kjblocks/actions/workflows/php.yml)
-[![GitHub release](https://img.shields.io/github/release/Kaudaj/kjblocks.svg)](https://GitHub.com/Kaudaj/kjblocks/releases/)
-[![GitHub license](https://img.shields.io/github/license/Kaudaj/kjblocks)](https://github.com/Kaudaj/kjblocks/LICENSE.md)
+[![PHP tests](https://github.com/Kaudaj/kjblocksexampleextension/actions/workflows/php.yml/badge.svg)](https://github.com/Kaudaj/kjblocksexampleextension/actions/workflows/php.yml)
+[![GitHub release](https://img.shields.io/github/release/Kaudaj/kjblocksexampleextension.svg)](https://GitHub.com/Kaudaj/kjblocksexampleextension/releases/)
+[![GitHub license](https://img.shields.io/github/license/Kaudaj/kjblocksexampleextension)](https://github.com/Kaudaj/kjblocksexampleextension/LICENSE.md)
 
 ## About
 
@@ -25,11 +25,11 @@ From PrestaShop installation root:
 
 ```bash
 cd modules
-git clone https://github.com/Kaudaj/kjblocks.git
-cd kjblocks
+git clone https://github.com/Kaudaj/kjblocksexampleextension.git
+cd kjblocksexampleextension
 composer install
 cd ../..
-bin/console pr:mo install kjblocks
+bin/console pr:mo install kjblocksexampleextension
 ```
 
 ### Configuration
@@ -94,6 +94,9 @@ See [Form Type](https://symfony.com/doc/4.4/reference/forms/types.html) document
 Also, as options are not always corresponding exactly to a form field, form mappers have been created. Their role is to :
 - map fields to options to persist the options in the database in the right structure after saving the block form
 - map options to fields to display accurate fields value corresponding to saved options
+
+Form mappers have to implements `FormMapperInterface`. It's recommended to extend directly the base class `BlockFormMapper`.
+Once you built your form mapper, return its service in the `getFormMapper` method.
 
 See ContainerFormMapper in [kjblocks][kjblocks] for a concrete example.
 
