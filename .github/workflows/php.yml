@@ -81,8 +81,7 @@ jobs:
         if: steps.cache_prestashop_source.outputs.cache-hit != 'true'
         run: |
           echo "no cache for kjblocks source. Fetching and extracting source code..."
-          wget https://api.github.com/repos/Kaudaj/kjblocks/releases/assets/105451528 \
-            --header="Authorization: token ${{ secrets.GH_TOKEN }}" --header="Accept: application/octet-stream" \
+          wget https://github.com/Kaudaj/kjblocks/releases/download/v1.0.0/kjblocks.zip \
             --quiet --output-document ${{ runner.temp }}/kjblocks.zip
           unzip -q ${{ runner.temp }}/kjblocks.zip -d ${{ runner.temp }}/kjblocks_zip
           mv ${{ runner.temp }}/kjblocks_zip/kjblocks ${{ runner.temp }}/prestashop/modules
