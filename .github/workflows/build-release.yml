@@ -31,7 +31,7 @@ jobs:
         run: ~/.composer/vendor/bin/header-stamp --extensions=php,js,css,scss,tpl,html.twig,vue --exclude=vendor,node_modules --license=$RUNNER_TEMP/afl.txt
 
       - name: Fix unnecessary spacing in index files
-        run: find . -name "index.php" -type f -exec sed -i 'N;/^\n$/d' {} +
+        run: find . -name 'index.php' -exec sed -i '19d' {} \;
       
       - name: Create and upload artifact
         uses: actions/upload-artifact@v1
